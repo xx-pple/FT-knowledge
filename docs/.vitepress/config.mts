@@ -102,5 +102,7 @@ export default defineConfig(
     useFolderTitleFromIndexFile: true, // 分组名 = 目录的 index.md 标题
     removePrefixAfterOrdering: true, // 去掉 "1." 前缀再显示
     excludeFilesByFrontmatterFieldName: 'draft',
+    // 分组顺序与顶部导航保持一致，未列出的按名称排在后面
+    manualSortFileNameByPriority: ['quick', 'ds', 'algo', 'ops'],
   })
 )
