@@ -84,9 +84,16 @@ docs/
 
 `base` 已在 `config.mts` 里设为 `/FT-knowledge/`，与仓库名对应。
 
-workflow 里已开启 `enablement: true`，首次运行时会自动把仓库的 **Settings → Pages → Source** 设为 **GitHub Actions**，不需要手动配置。
+### 前置条件（只需设置一次）
 
-如果自动启用失败（例如仓库策略限制），手动改一次即可：**Settings → Pages → Source** 选择 **GitHub Actions**，然后在 Actions 页面重新运行 `Deploy`。
+**Settings → Pages → Source** 必须是 **GitHub Actions**。
+
+两个容易踩的点：
+
+1. `workflow` 里的 `enablement: true` 只对「Pages 从未启用过」的仓库生效。如果仓库此前用分支模式启用过 Pages，它不会改写来源，**必须手动切换**。
+2. 切换 Source 之后，之前的分支构建结果不会被新部署替换。要重新运行一次 `Deploy` workflow（或推一个新提交）才会生效。
+
+如果 Source 仍是分支模式，站点会由 Jekyll 渲染仓库根目录的 `README.md`，表现为：页面标题带 `| FT-knowledge` 后缀、`<html lang="en-US">`、所有子页面 404。
 
 以后如果换成自定义域名，把 `base` 改成 `'/'` 即可。
 
