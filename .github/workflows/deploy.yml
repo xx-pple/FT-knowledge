@@ -31,8 +31,9 @@ jobs:
 
       - run: npm run docs:build
         env:
-          # 部署到项目页（https://<user>.github.io/<repo>/）时取消注释并填仓库名
-          # VITEPRESS_BASE: /NOTE/
+          # base 已在 config.mts 里设为 /FT-knowledge/，通常无需在此覆盖
+          # 换自定义域名时可取消注释并设为 /
+          # VITEPRESS_BASE: /
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

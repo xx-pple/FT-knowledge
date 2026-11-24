@@ -1,10 +1,10 @@
 import { defineConfig } from 'vitepress'
 import { withSidebar } from 'vitepress-sidebar'
 
-// 部署到 https://<user>.github.io/<repo>/ 时改成 '/<repo>/'
-// 部署到 https://<user>.github.io/ 或自定义域名时保持 '/'
-// 也可以在 CI 里通过环境变量覆盖，不必改这里
-const base = process.env.VITEPRESS_BASE || '/'
+// 仓库：https://github.com/xx-pple/FT-knowledge
+// 项目页地址是 https://xx-pple.github.io/FT-knowledge/，所以 base 必须是 /FT-knowledge/
+// 将来换成用户页（xx-pple.github.io）或自定义域名时，改成 '/'
+const base = process.env.VITEPRESS_BASE || '/FT-knowledge/'
 
 const siteConfig = {
   lang: 'zh-CN',

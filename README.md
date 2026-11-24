@@ -2,16 +2,21 @@
 
 按主题组织的知识点索引，纯静态站点，托管在 GitHub Pages。
 
+- 仓库：https://github.com/xx-pple/FT-knowledge
+- 站点：https://xx-pple.github.io/FT-knowledge/
+
 基于 **VitePress 1.6** + **vitepress-sidebar**（侧边栏按目录自动生成）。
 
 ## 本地开发
 
 ```bash
 npm install
-npm run docs:dev       # http://localhost:5173
+npm run docs:dev       # http://localhost:5173/FT-knowledge/
 npm run docs:build     # 构建，产物在 docs/.vitepress/dist
 npm run docs:preview   # 预览构建产物
 ```
+
+因为 `base` 是 `/FT-knowledge/`（与线上一致），本地地址也要带这个前缀。这样能避免「本地正常、线上 404」这类只在部署后才暴露的问题。
 
 ## 目录结构
 
@@ -77,12 +82,11 @@ docs/
 
 推送到 `main` 分支后，GitHub Actions 自动构建并发布。
 
-首次部署前需要在仓库里设置两处：
+`base` 已在 `config.mts` 里设为 `/FT-knowledge/`，与仓库名对应。首次部署前只需在仓库里做一件事：
 
-1. **Settings → Pages → Source** 选择 **GitHub Actions**（选分支模式会一直 404）
-2. **base 配置**：
-   - 部署到 `https://<user>.github.io/<repo>/` → 把 `config.mts` 里的 `base` 改成 `'/<repo>/'`，或取消 `deploy.yml` 里 `VITEPRESS_BASE` 的注释
-   - 部署到 `https://<user>.github.io/` 或自定义域名 → 保持 `'/'`
+**Settings → Pages → Source** 选择 **GitHub Actions**（选「Deploy from a branch」会一直 404）。
+
+以后如果换成自定义域名，把 `base` 改成 `'/'` 即可。
 
 ## 已知约束
 
