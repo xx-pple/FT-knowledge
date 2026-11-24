@@ -44,6 +44,7 @@ const siteConfig = {
       { text: '数据结构', link: '/ds/' },
       { text: '算法', link: '/algo/' },
       { text: '工具', link: '/ops/' },
+      { text: '本站说明', link: '/site/' },
     ],
 
     // sidebar 交给 vitepress-sidebar 自动生成，这里不要手写
