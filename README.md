@@ -82,9 +82,11 @@ docs/
 
 推送到 `main` 分支后，GitHub Actions 自动构建并发布。
 
-`base` 已在 `config.mts` 里设为 `/FT-knowledge/`，与仓库名对应。首次部署前只需在仓库里做一件事：
+`base` 已在 `config.mts` 里设为 `/FT-knowledge/`，与仓库名对应。
 
-**Settings → Pages → Source** 选择 **GitHub Actions**（选「Deploy from a branch」会一直 404）。
+workflow 里已开启 `enablement: true`，首次运行时会自动把仓库的 **Settings → Pages → Source** 设为 **GitHub Actions**，不需要手动配置。
+
+如果自动启用失败（例如仓库策略限制），手动改一次即可：**Settings → Pages → Source** 选择 **GitHub Actions**，然后在 Actions 页面重新运行 `Deploy`。
 
 以后如果换成自定义域名，把 `base` 改成 `'/'` 即可。
 
