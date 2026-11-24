@@ -1,0 +1,16 @@
+{
+  "name": "note",
+  "version": "0.1.0",
+  "private": true,
+  "description": "知识点速查知识库",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "markdown-it-mathjax3": "^4.3.2",
+    "vitepress": "^1.6.4",
+    "vitepress-sidebar": "^1.41.0"
+  }
+}

@@ -1,0 +1,29 @@
+:root {
+  --vp-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  --vp-font-family-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo,
+    'Courier New', monospace;
+}
+
+/* 中文正文行高比英文需要更宽松一些 */
+.vp-doc p,
+.vp-doc li {
+  line-height: 1.75;
+}
+
+/* 速查场景下表格密度可以稍高 */
+.vp-doc table {
+  font-size: 14px;
+}
+
+.vp-doc h2 {
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+/* 图片默认不超过正文宽度，避免大图撑破版面 */
+.vp-doc img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
