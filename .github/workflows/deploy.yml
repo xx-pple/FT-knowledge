@@ -29,16 +29,14 @@ jobs:
 
       - run: npm ci
 
+      # base 已在 config.mts 里设为 /FT-knowledge/，这里不需要再传环境变量
       - run: npm run docs:build
-        env:
-          # base 已在 config.mts 里设为 /FT-knowledge/，通常无需在此覆盖
-          # 换自定义域名时可取消注释并设为 /
-          # VITEPRESS_BASE: /
 
       - uses: actions/configure-pages@v5
         with:
-          # 仓库首次部署时自动启用 Pages（源设为 GitHub Actions），无需手动去设置页操作
+          # 仓库首次部署时自动启用 Pages（源设为 GitHub Actions）
           enablement: true
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs/.vitepress/dist
