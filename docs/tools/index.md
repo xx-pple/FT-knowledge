@@ -1,7 +1,7 @@
 ---
 title: 工具
 description: 软件推荐、建站流程、排查技巧
-order: 6
+order: 10
 ---
 
 # 工具
@@ -10,12 +10,15 @@ order: 6
 
 ## 本分类条目
 
-| 条目 | 一句话 |
-|---|---|
-| [装机必备软件](./1.must-have-software.md) | 重装系统后第一批发安装的 |
-| [Hexo + GitHub Pages 建站](./2.hexo-github-pages.md) | 用 Hexo 免费搭博客的完整流程，作为建站思路的存档 |
-| [B 站弹幕发送者查询](./3.bilibili-danmaku-search.md) | 通过弹幕哈希反查 UID 的思路 |
+暂无。早期的三篇（装机软件、Hexo 建站、B 站弹幕查询）已移到 [归档](../archive/index.md)。
+
+## 计划补充
+
+- 常用命令行技巧
+- 端口占用与进程排查
+- 开发环境配置清单
 
 ## 相关分类
 
-- 版本控制相关的内容在 [Git](../git/index.md)
+- 版本控制在 [Git](../git/index.md)
+- 容器相关在 [Docker](../docker/index.md)

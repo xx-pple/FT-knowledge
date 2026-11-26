@@ -2,7 +2,7 @@
 title: MySQL
 ---
 
-# mysql常识
+# MySQL 基础
 
 关系型数据库（RDB，Relational Database）
 

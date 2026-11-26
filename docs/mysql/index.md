@@ -13,8 +13,11 @@ order: 3
 | 条目 | 一句话 |
 |---|---|
 | [MySQL 基础](./mysql.md) | 关系模型与 ACID 四大特性 |
+| [MySQL 工作流](./mysql-workflow.md) | 连接、建库建表、备份恢复的日常流程 |
+| [MySQL 常用命令](./mysql-command.md) | 按用途分类的 SQL 语句速查 |
 
 ## 相关分类
 
 - 消息队列与异步解耦在 [RabbitMQ](../rabbitmq/index.md)
-- 前端侧的数据编码在 [前端](../frontend/index.md)
+- 缓存与内存存储在 [Redis](../redis/index.md)
+- 用容器跑数据库见 [Docker](../docker/index.md)
