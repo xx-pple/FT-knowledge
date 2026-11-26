@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1050" viewBox="0 0 1080 1050" font-family="'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <marker id="d-gray" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#8A93A0"/></marker>
+    <marker id="d-teal" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#0E9381"/></marker>
+    <marker id="d-red" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#D0453F"/></marker>
+  </defs>
+
+  <rect width="1080" height="1050" fill="#F8F9FB"/>
+
+  <!-- header -->
+  <text x="32" y="54" font-size="25" font-weight="700" fill="#16191F">Git 心智模型：四个区域，两种命令</text>
+  <text x="32" y="80" font-size="12.5" fill="#6E7787">每条命令只做一件事：把东西从一个区域搬到另一个区域。向下 = 记录，向上 = 撤销或同步。</text>
+
+  <!-- mini legend -->
+  <line x1="742" y1="76" x2="764" y2="76" stroke="#8A93A0" stroke-width="1.8" marker-end="url(#d-gray)"/>
+  <text x="772" y="80" font-size="11" fill="#6E7787">记录（向下）</text>
+  <line x1="872" y1="76" x2="894" y2="76" stroke="#D0453F" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#d-red)"/>
+  <text x="902" y="80" font-size="11" fill="#6E7787">撤销</text>
+  <line x1="960" y1="76" x2="982" y2="76" stroke="#0E9381" stroke-width="1.8" marker-end="url(#d-teal)"/>
+  <text x="990" y="80" font-size="11" fill="#6E7787">同步</text>
+
+  <!-- ============ BAND 1 : workspace ============ -->
+  <g>
+    <rect x="32" y="108" width="1016" height="140" rx="10" fill="#FDF4E8" stroke="#D97B29" stroke-width="1.3"/>
+    <rect x="46" y="122" width="5" height="112" rx="2.5" fill="#D97B29" opacity="0.55"/>
+    <text x="68" y="148" font-size="17.5" font-weight="700" fill="#B4601A">① 工作区</text>
+    <text x="68" y="168" font-size="9.5" fill="#A9865F" letter-spacing="1.2">WORKING DIRECTORY</text>
+    <line x1="292" y1="132" x2="292" y2="224" stroke="#D97B29" stroke-width="1" opacity="0.2"/>
+    <circle cx="306" cy="145" r="2.6" fill="#D97B29"/>
+    <text x="318" y="149" font-size="12.5" fill="#3D4552">你正在编辑的文件。git status 里的 untracked / modified 就是这一层。</text>
+    <circle cx="306" cy="177" r="2.6" fill="#D97B29"/>
+    <text x="318" y="181" font-size="12.5" fill="#3D4552">没有任何历史备份：没 add、没 commit 就删了，Git 也救不了。</text>
+    <circle cx="306" cy="209" r="2.6" fill="#D97B29"/>
+    <text x="318" y="213" font-size="12.5" fill="#3D4552">四层里唯一你能用编辑器直接打开的一层。</text>
+  </g>
+
+  <!-- gap 1 -->
+  <g>
+    <line x1="150" y1="258" x2="150" y2="302" stroke="#8A93A0" stroke-width="2" marker-end="url(#d-gray)"/>
+    <text x="172" y="278" font-size="13" font-weight="600" fill="#16191F" font-family="'Cascadia Code','Consolas',monospace">git add .</text>
+    <text x="172" y="296" font-size="11.5" fill="#8A93A0">挑进待提交清单</text>
+    <line x1="900" y1="302" x2="900" y2="258" stroke="#D0453F" stroke-width="1.9" stroke-dasharray="5 4" marker-end="url(#d-red)"/>
+    <text x="878" y="278" font-size="13" fill="#D0453F" text-anchor="end" font-family="'Cascadia Code','Consolas',monospace">git restore --staged</text>
+    <text x="878" y="296" font-size="11.5" fill="#C98682" text-anchor="end">取消暂存，改动还在</text>
+  </g>
+
+  <!-- ============ BAND 2 : index ============ -->
+  <g>
+    <rect x="32" y="312" width="1016" height="140" rx="10" fill="#EDF3FE" stroke="#2F6FED" stroke-width="1.3"/>
+    <rect x="46" y="326" width="5" height="112" rx="2.5" fill="#2F6FED" opacity="0.55"/>
+    <text x="68" y="352" font-size="17.5" font-weight="700" fill="#1F4FBF">② 暂存区</text>
+    <text x="68" y="372" font-size="9.5" fill="#7E8FAE" letter-spacing="1.2">INDEX · STAGE</text>
+    <line x1="292" y1="336" x2="292" y2="428" stroke="#2F6FED" stroke-width="1" opacity="0.2"/>
+    <circle cx="306" cy="349" r="2.6" fill="#2F6FED"/>
+    <text x="318" y="353" font-size="12.5" fill="#3D4552">一份「下次提交」的清单：只记路径和 blob 哈希，不是文件副本。</text>
+    <circle cx="306" cy="381" r="2.6" fill="#2F6FED"/>
+    <text x="318" y="385" font-size="12.5" fill="#3D4552">所以 add 之后再改文件，提交的仍是 add 那一刻的内容。</text>
+    <circle cx="306" cy="413" r="2.6" fill="#2F6FED"/>
+    <text x="318" y="417" font-size="12.5" fill="#3D4552">git add -p 能按代码块挑选，是最该养成的提交前习惯。</text>
+  </g>
+
+  <!-- gap 2 -->
+  <g>
+    <line x1="150" y1="462" x2="150" y2="506" stroke="#8A93A0" stroke-width="2" marker-end="url(#d-gray)"/>
+    <text x="172" y="482" font-size="13" font-weight="600" fill="#16191F" font-family="'Cascadia Code','Consolas',monospace">git commit -m</text>
+    <text x="172" y="500" font-size="11.5" fill="#8A93A0">拍一张快照，生成新提交</text>
+    <line x1="900" y1="506" x2="900" y2="462" stroke="#D0453F" stroke-width="1.9" stroke-dasharray="5 4" marker-end="url(#d-red)"/>
+    <text x="878" y="482" font-size="13" fill="#D0453F" text-anchor="end" font-family="'Cascadia Code','Consolas',monospace">git reset --hard</text>
+    <text x="878" y="500" font-size="11.5" fill="#C98682" text-anchor="end">退提交，连工作区一起清掉</text>
+  </g>
+
+  <!-- ============ BAND 3 : repo ============ -->
+  <g>
+    <rect x="32" y="516" width="1016" height="140" rx="10" fill="#F1EDFD" stroke="#6C4BD8" stroke-width="1.3"/>
+    <rect x="46" y="530" width="5" height="112" rx="2.5" fill="#6C4BD8" opacity="0.55"/>
+    <text x="68" y="556" font-size="17.5" font-weight="700" fill="#4B2FA8">③ 本地仓库</text>
+    <text x="68" y="576" font-size="9.5" fill="#9081C4" letter-spacing="1.2">.git · REPOSITORY</text>
+    <line x1="292" y1="540" x2="292" y2="632" stroke="#6C4BD8" stroke-width="1" opacity="0.2"/>
+    <circle cx="306" cy="553" r="2.6" fill="#6C4BD8"/>
+    <text x="318" y="557" font-size="12.5" fill="#3D4552">提交过的内容都在这里，随时能回到任意一个历史版本。</text>
+    <circle cx="306" cy="585" r="2.6" fill="#6C4BD8"/>
+    <text x="318" y="589" font-size="12.5" fill="#3D4552">离线也能提交、看历史、切分支 —— 不需要连远程。</text>
+    <circle cx="306" cy="617" r="2.6" fill="#6C4BD8"/>
+    <text x="318" y="621" font-size="12.5" fill="#3D4552">所有「反悔」都是逐层往回退：先退这一层，再退暂存区。</text>
+  </g>
+
+  <!-- gap 3 -->
+  <g>
+    <line x1="150" y1="666" x2="150" y2="710" stroke="#8A93A0" stroke-width="2" marker-end="url(#d-gray)"/>
+    <text x="172" y="686" font-size="13" font-weight="600" fill="#16191F" font-family="'Cascadia Code','Consolas',monospace">git push</text>
+    <text x="172" y="704" font-size="11.5" fill="#8A93A0">交给远端，别人才能看到</text>
+    <line x1="900" y1="710" x2="900" y2="666" stroke="#0E9381" stroke-width="1.9" marker-end="url(#d-teal)"/>
+    <text x="878" y="686" font-size="13" fill="#0A6E60" text-anchor="end" font-family="'Cascadia Code','Consolas',monospace">git fetch</text>
+    <text x="878" y="704" font-size="11.5" fill="#6BA79D" text-anchor="end">只更新指针，不动你的文件</text>
+  </g>
+
+  <!-- ============ BAND 4 : remote ============ -->
+  <g>
+    <rect x="32" y="720" width="1016" height="140" rx="10" fill="#E7F6F3" stroke="#0E9381" stroke-width="1.3"/>
+    <rect x="46" y="734" width="5" height="112" rx="2.5" fill="#0E9381" opacity="0.55"/>
+    <text x="68" y="760" font-size="17.5" font-weight="700" fill="#0A6E60">④ 远程仓库</text>
+    <text x="68" y="780" font-size="9.5" fill="#6BA79D" letter-spacing="1.2">REMOTE · origin</text>
+    <line x1="292" y1="744" x2="292" y2="836" stroke="#0E9381" stroke-width="1" opacity="0.2"/>
+    <circle cx="306" cy="757" r="2.6" fill="#0E9381"/>
+    <text x="318" y="761" font-size="12.5" fill="#3D4552">本质只是一个有名字的 URL，加上你本地的跟踪指针 origin/main。</text>
+    <circle cx="306" cy="789" r="2.6" fill="#0E9381"/>
+    <text x="318" y="793" font-size="12.5" fill="#3D4552">没有它也能写代码、能提交；它的价值是交换和备份。</text>
+    <circle cx="306" cy="821" r="2.6" fill="#0E9381"/>
+    <text x="318" y="825" font-size="12.5" fill="#3D4552">push / fetch / pull 是唯一会连它的三个命令（pull = fetch + merge）。</text>
+  </g>
+
+  <!-- ============ laws ============ -->
+  <rect x="32" y="890" width="1016" height="120" rx="10" fill="#16191F"/>
+  <text x="56" y="922" font-size="11" font-weight="700" fill="#F2B137" letter-spacing="2">两 条 铁 律</text>
+  <text x="56" y="952" font-size="13" fill="#E8EBF0">① Git 从不「修改」内容，只移动指针 —— 提交过的东西，几乎永远救得回来。</text>
+  <text x="56" y="980" font-size="13" fill="#E8EBF0">② 任何「我完了」的瞬间，第一件事是 <tspan font-family="'Cascadia Code','Consolas',monospace" fill="#F2B137">git reflog</tspan>，不是重装系统。</text>
+  <line x1="700" y1="906" x2="700" y2="996" stroke="#3A4048" stroke-width="1"/>
+  <text x="724" y="922" font-size="11" font-weight="700" fill="#7ED3C4" letter-spacing="2">六 字 口 诀</text>
+  <text x="724" y="952" font-size="12.5" fill="#C9D0DA" font-family="'Cascadia Code','Consolas',monospace">add 挑 · commit 拍 · push 传</text>
+  <text x="724" y="980" font-size="12.5" fill="#C9D0DA" font-family="'Cascadia Code','Consolas',monospace">fetch 看 · reset 退 · reflog 救</text>
+</svg>
