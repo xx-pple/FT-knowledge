@@ -20,11 +20,17 @@ features:
   - title: 数据结构
     details: 链表、树、哈希表
     link: /ds/
-  - title: 算法
-    details: 二分、排序、复杂度
-    link: /algo/
+  - title: Git
+    details: 命令速查、常见问题
+    link: /git/
+  - title: MySQL
+    details: 关系模型、事务、索引
+    link: /mysql/
+  - title: RabbitMQ
+    details: 消息队列、异步解耦
+    link: /rabbitmq/
   - title: 工具
-    details: git、命令行、排错手册
+    details: 命令行、排错手册
     link: /ops/
 ---
 

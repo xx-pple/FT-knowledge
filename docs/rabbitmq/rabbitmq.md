@@ -1,7 +1,5 @@
 ---
-title:rabbitmq
-draft:false
-
+title: RabbitMQ
 ---
 
 # rabbitmq

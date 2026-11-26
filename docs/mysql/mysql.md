@@ -1,6 +1,5 @@
 ---
-title:mysql
-
+title: MySQL
 ---
 
 # mysql

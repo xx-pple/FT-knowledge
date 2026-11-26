@@ -14,5 +14,8 @@ Thumbs.db
 *.log
 npm-debug.log*
 
+# 编辑器 / 工具生成的本地目录，不要提交
+.workbuddy/
+
 # 注意：不要在这里忽略图片格式（*.png / *.jpg / *.svg）
 # 文章配图需要进仓库，否则线上会全部裂开

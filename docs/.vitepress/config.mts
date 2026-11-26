@@ -42,7 +42,9 @@ const siteConfig = {
     nav: [
       { text: '语言基础', link: '/quick/' },
       { text: '数据结构', link: '/ds/' },
-      { text: '算法', link: '/algo/' },
+      { text: 'Git', link: '/git/' },
+      { text: 'MySQL', link: '/mysql/' },
+      { text: 'RabbitMQ', link: '/rabbitmq/' },
       { text: '工具', link: '/ops/' },
       { text: '本站说明', link: '/site/' },
     ],
@@ -104,6 +106,6 @@ export default defineConfig(
     removePrefixAfterOrdering: true, // 去掉 "1." 前缀再显示
     excludeFilesByFrontmatterFieldName: 'draft',
     // 分组顺序与顶部导航保持一致，未列出的按名称排在后面
-    manualSortFileNameByPriority: ['quick', 'ds', 'algo', 'ops'],
+    manualSortFileNameByPriority: ['quick', 'ds', 'git', 'mysql', 'rabbitmq', 'ops', 'site'],
   })
 )

@@ -1,7 +1,6 @@
 ---
-title: Git 常识 
+title: Git 命令速查
 tags: [git, 工具]
-
 ---
 
 
