@@ -1,5 +1,10 @@
 import { defineConfig } from 'vitepress'
 import { withSidebar } from 'vitepress-sidebar'
+import { scanCategories } from './utils/categories'
+
+// 扫描 docs/ 下所有含 index.md 的目录，自动得到分类列表
+// 新增分类只需要建目录 + index.md，不必再改这个文件
+const categories = scanCategories()
 
 // 仓库：https://github.com/xx-pple/FT-knowledge
 // 项目页地址是 https://xx-pple.github.io/FT-knowledge/，所以 base 必须是 /FT-knowledge/
@@ -39,15 +44,8 @@ const siteConfig = {
   themeConfig: {
     outline: { level: [2, 3], label: '本页目录' },
 
-    nav: [
-      { text: '语言基础', link: '/quick/' },
-      { text: '数据结构', link: '/ds/' },
-      { text: 'Git', link: '/git/' },
-      { text: 'MySQL', link: '/mysql/' },
-      { text: 'RabbitMQ', link: '/rabbitmq/' },
-      { text: '工具', link: '/ops/' },
-      { text: '本站说明', link: '/site/' },
-    ],
+    // 由 docs/*/index.md 自动生成，顺序取各文件 frontmatter 的 order
+    nav: categories.map((c) => ({ text: c.title, link: `/${c.dir}/` })),
 
     // sidebar 交给 vitepress-sidebar 自动生成，这里不要手写
 
@@ -106,6 +104,6 @@ export default defineConfig(
     removePrefixAfterOrdering: true, // 去掉 "1." 前缀再显示
     excludeFilesByFrontmatterFieldName: 'draft',
     // 分组顺序与顶部导航保持一致，未列出的按名称排在后面
-    manualSortFileNameByPriority: ['quick', 'ds', 'git', 'mysql', 'rabbitmq', 'ops', 'site'],
+    manualSortFileNameByPriority: categories.map((c) => c.dir),
   })
 )

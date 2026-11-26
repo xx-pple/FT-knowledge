@@ -2,7 +2,7 @@
 title: MySQL
 ---
 
-# mysql
+# mysql常识
 
 关系型数据库（RDB，Relational Database）
 
@@ -23,3 +23,4 @@ MySQL 字段类型可以简单分为三大类：
 - **数值类型**：整型（TINYINT、SMALLINT、MEDIUMINT、INT 和 BIGINT）、浮点型（FLOAT 和 DOUBLE）、定点型（DECIMAL）、位字段数据类型(BIT)
 - **字符串类型**：常用：CHAR、VARCHAR、BINARY。text类：TINYTEXT、TEXT、MEDIUMTEXT、LONGTEXT。blob类：TINYBLOB、BLOB、MEDIUMBLOB 和 LONGBLOB 等，最常用的是 CHAR 和 VARCHAR。
 - **日期时间类型**：YEAR、TIME、DATE、DATETIME 和 TIMESTAMP 等。
+

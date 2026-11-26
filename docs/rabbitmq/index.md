@@ -1,3 +1,9 @@
+---
+title: RabbitMQ
+description: 消息队列与异步解耦
+order: 5
+---
+
 # RabbitMQ
 
 消息队列的核心概念与常见使用场景：异步解耦、削峰、可靠投递。

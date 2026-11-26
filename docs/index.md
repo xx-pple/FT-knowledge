@@ -5,34 +5,9 @@ hero:
   name: 知识速查
   text: 按主题组织的知识点索引
   tagline: 一页一个概念，搜到即用
-  actions:
-    - theme: brand
-      text: 开始查找
-      link: /quick/
-    - theme: alt
-      text: 工具速查
-      link: /ops/
-
-features:
-  - title: 语言基础
-    details: 类型转换、作用域、闭包、异步
-    link: /quick/
-  - title: 数据结构
-    details: 链表、树、哈希表
-    link: /ds/
-  - title: Git
-    details: 命令速查、常见问题
-    link: /git/
-  - title: MySQL
-    details: 关系模型、事务、索引
-    link: /mysql/
-  - title: RabbitMQ
-    details: 消息队列、异步解耦
-    link: /rabbitmq/
-  - title: 工具
-    details: 命令行、排错手册
-    link: /ops/
 ---
+
+<HomeLinks />
 
 ## 这个站点怎么用
 

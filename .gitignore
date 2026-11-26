@@ -3,6 +3,10 @@ node_modules/
 docs/.vitepress/dist/
 docs/.vitepress/cache/
 
+# 本地验证用的临时产物目录
+dist_v2/
+dist_verify/
+
 # 编辑器与系统
 .DS_Store
 Thumbs.db

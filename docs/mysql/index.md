@@ -1,3 +1,9 @@
+---
+title: MySQL
+description: 关系模型、事务与索引
+order: 3
+---
+
 # MySQL
 
 关系型数据库的基础概念：关系模型、事务特性、索引设计。
@@ -10,4 +16,5 @@
 
 ## 相关分类
 
-- 存储结构与索引的底层代价，可对照 [数据结构](../ds/index.md)
+- 消息队列与异步解耦在 [RabbitMQ](../rabbitmq/index.md)
+- 前端侧的数据编码在 [前端](../frontend/index.md)
